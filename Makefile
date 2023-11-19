@@ -1,4 +1,4 @@
-buildi: binary/ binary/glad.o binary/foxel_mathutil.o binary/foxel_renderer.o
+build: binary/ binary/glad.o binary/foxel_mathutil.o binary/foxel_renderer.o
 	echo "Finished Building."
 
 binary/:
