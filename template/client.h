@@ -4,7 +4,7 @@
 void client_resize(int width, int height);
 void client_mousemove(float x, float y);
 void client_mousepress(int button, int action, int mods);
-void client_key(int button, int action, int mods);
+void client_keypress(int button, int action, int mods);
 
 void client_update(float delta);
 void client_draw();
