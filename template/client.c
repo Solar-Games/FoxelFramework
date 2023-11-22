@@ -14,6 +14,18 @@ static void client_linkResize(GLFWwindow* window, int width, int height)
 {
 	client_resize(width, height);
 }
+static void client_linkMouseMove(GLFWwindow* window, double x, double y)
+{
+	client_mousemove(x, y);
+}
+static void client_linkMousePress(GLFWwindow* window, int button, int scancode, int action, int mods)
+{
+	client_mousepress(button, action, mods);
+}
+static void client_linkKeyPress(GLFWwindow* window, int button, int action, int mod)
+{
+	client_keypress(button, action, mod);
+}
 
 void client_resize(int width, int height)
 {
@@ -24,7 +36,9 @@ void client_mousemove(float x, float y)
 void client_mousepress(int button, int action, int mods)
 {
 }
-void client_key(int)
+void client_keypress(int button, int action, int mods)
+{
+}
 
 void client_update(float delta)
 {
@@ -54,6 +68,9 @@ void client_main()
 
 	glfwMakeContextCurrent(window);
 	glfwSetFramebufferSizeCallback(window, client_linkResize);
+	glfwSetCursorPosCallback(window, client_linkMouseMove);
+	glfwSetMouseButtonCallback(window, client_linkMousePress);
+	glfwSetKeyCallback(window, client_linkKeyPress);
 
 	if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
 	{
