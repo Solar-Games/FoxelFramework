@@ -18,11 +18,11 @@ static void client_linkMouseMove(GLFWwindow* window, double x, double y)
 {
 	client_mousemove(x, y);
 }
-static void client_linkMousePress(GLFWwindow* window, int button, int scancode, int action, int mods)
+static void client_linkMousePress(GLFWwindow* window, int button, int action, int mods)
 {
 	client_mousepress(button, action, mods);
 }
-static void client_linkKeyPress(GLFWwindow* window, int button, int action, int mod)
+static void client_linkKeyPress(GLFWwindow* window, int button, int scancode, int action, int mod)
 {
 	client_keypress(button, action, mod);
 }
